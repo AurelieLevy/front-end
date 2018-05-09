@@ -1,65 +1,74 @@
 import React from "react"
 
 import request from "src/resources/request"
-import mapboxgl from "mapbox-gl"
+import ReactMapboxGl, { Marker } from "react-mapbox-gl"
+import styled from "styled-components"
 
 import "./style.scss"
 
-mapboxgl.accessToken =
-	"pk.eyJ1IjoibWF0aGlhcy1oZWlnIiwiYSI6ImNqZ2V6ejFpaDRxa3MycXBodzJqZHZhcDgifQ.luPiLBLbHqeTfdEcG8wj3Q"
+const Map = ReactMapboxGl({
+    accessToken:
+        "pk.eyJ1IjoibWF0aGlhcy1oZWlnIiwiYSI6ImNqZ2V6ejFpaDRxa3MycXBodzJqZHZhcDgifQ.luPiLBLbHqeTfdEcG8wj3Q",
+    minZoom: 13
+})
+
+const Mark = styled.div`
+    background-color: #e74c3c;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #eaa29b;
+    cursor: pointer;
+`
 
 module.exports = class Tasks extends React.Component {
-	state = {
-		data: [],
-		loading: false,
-		loadingMore: false,
-		showLoadingMore: true,
-		lng: 6.659125,
-		lat: 46.778845,
-		zoom: 15
-	}
+    state = {
+        data: [],
+        loading: false,
+        loadingMore: false,
+        showLoadingMore: true,
+        latitude: 46.778845,
+        longitude: 6.659125,
+        zoom: 17
+    }
 
-	//componentDidMount = () => this.fetchData()
+    //componentDidMount = () => this.fetchData()
 
-	fetchData = () => {
-		this.setState({
-			loadingMore: true
-		})
-		request.get("episodes", {}, res => {
-			console.log(res)
-			// const data = this.state.data.concat(DEFAULT_DATA)
-			this.setState(
-				{
-					data: res.data,
-					loadingMore: false
-				},
-				() => window.dispatchEvent(new Event("resize"))
-			)
-		})
-	}
+    fetchData = () => {
+        this.setState({
+            loadingMore: true
+        })
+        request.get("nodes", {}, res => {
+            console.log(res)
+            // const data = this.state.data.concat(DEFAULT_DATA)
+            this.setState(
+                {
+                    data: res.data,
+                    loadingMore: false
+                },
+                () => window.dispatchEvent(new Event("resize"))
+            )
+        })
+    }
 
-	componentDidMount() {
-		const { lng, lat, zoom } = this.state
-
-		const map = new mapboxgl.Map({
-			container: this.mapContainer,
-			style: "mapbox://styles/mapbox/streets-v9",
-			center: [lng, lat],
-			zoom
-		})
-
-		map.on("move", () => {
-			const { lng, lat } = map.getCenter()
-
-			this.setState({
-				lng: lng.toFixed(4),
-				lat: lat.toFixed(4),
-				zoom: map.getZoom().toFixed(2)
-			})
-		})
-	}
-
-	render() {
-		return <div ref={el => (this.mapContainer = el)} className="absolute top right left bottom" />
-	}
+    render() {
+        const { latitude, longitude, zoom } = this.state
+        return (
+            <Map
+                style="mapbox://styles/mapbox/streets-v9"
+                containerStyle={{ height: "100vh", width: "100vw" }}
+                center={[longitude, latitude]}
+                zoom={[zoom]}
+            >
+                <Marker
+                    coordinates={[longitude, latitude]}
+                    onClick={() => {
+                        this.props.history.push("/node/1")
+                    }}
+                >
+                    <Mark />
+                </Marker>
+            </Map>
+        )
+    }
 }
