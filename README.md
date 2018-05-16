@@ -17,5 +17,5 @@ Une carte représente les emplacements des différents groupes de capteurs. Un c
 ## Conclusion
 [Points à améliorer, points en suspens, améliorations futures, ...]
 
-## Sources
+## Documentation supplémentaire
 [liens utiles]
