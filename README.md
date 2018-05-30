@@ -17,10 +17,14 @@ Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organise
 Le front-end doit mettre à disposition différentes fonctionnalités selon le rôle de l'utilisateur connecté.
 Deux types d'utilisateurs existent: admin et lambda. 
 Dès que quelqu'un souhaite avoir accès à l'application, il doit se connecter avec son mot de passe.
+
 ***admin***
+
 L'utilisateur admin a tous les droits. Il a donc accès à toutes les fonctionnalités de l'application.
 En plus des pages que l'utilisateur lambda peut voir, il peut aussi modifier le temps de rafraichissement des capteurs.
+
 ***lambda***
+
 L'utilisateur lambda a accès aux pages permettant de visionner les données et les graphiques.
 
 ### Pages
