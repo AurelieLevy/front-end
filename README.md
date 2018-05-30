@@ -44,7 +44,14 @@ Pour plus d'informations sur les endpoints, veuillez vous référer à la partie
 ## Problèmes rencontrés et difficultés à prendre en compte
 
 ## Conclusion
-[Points à améliorer, points en suspens, améliorations futures, ...]
+### Points à améliorer
+Comme nous n'avons pas eu beaucoup de temps, le visuel est totalement améliorable.
+Nous sommes restés relativement basiques, et nous avons fait le minimum de pages possibles. Une des améliorations possibles à ce sujet serait de mieux diviser les résultats, afin de les rendre plus lisibles.
+### Points en suspens
+### Améliorations futures
 
 ## Documentation supplémentaire
-[liens utiles]
+### Liens utiles
+* React: <https://reactjs.org/>
+* D3: <https://d3js.org/>
+* Mapbox: <https://www.mapbox.com/mapbox.js/api/>
