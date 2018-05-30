@@ -13,10 +13,31 @@ Une carte représente les emplacements des différents groupes de capteurs. Un c
 Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organiser l'application en modules
 
 ## Spécificités
-[Spécificités à savoir pour la partie du projet]
+### Contraintes
+Le front-end doit mettre à disposition différentes fonctionnalités selon le rôle de l'utilisateur connecté.
+Deux types d'utilisateurs existent: admin et lambda. 
+Dès que quelqu'un souhaite avoir accès à l'application, il doit se connecter avec son mot de passe.
+***admin***
+L'utilisateur admin a tous les droits. Il a donc accès à toutes les fonctionnalités de l'application.
+En plus des pages que l'utilisateur lambda peut voir, il peut aussi modifier le temps de rafraichissement des capteurs.
+***lambda***
+L'utilisateur lambda a accès aux pages permettant de visionner les données et les graphiques.
+
+### Pages
+Plusieurs pages sont disponibles, chacune correspondantes à une fonctionnalité.
+Une page permet de voir une carte ou se trouve des points, lesquels représentent la position de chaque groupe de capteurs. Au clic sur un de ces points, il est possible d'atteindre une page présentant les données liées aux capteurs visés.
+De cette manière, il est possible d'observer séparément les capteurs selon leur emplacements.
+
+### Endpoints
+Pour plus d'informations sur les endpoints, veuillez vous référer à la partie backend.
+
+### Visuel
+[Captures d'écran et explications]
 
 ## Déploiement
 [Instruction de déploiement/utilisation]
+
+## Problèmes rencontrés et difficultés à prendre en compte
 
 ## Conclusion
 [Points à améliorer, points en suspens, améliorations futures, ...]
