@@ -15,7 +15,7 @@ Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 
 
 * [D3](https://d3js.org/) 
 
-<center><img src="images/d3.png" alt="Logo d3" width="100" height="100"> </center>
+<img src="images/d3.png" alt="Logo d3" width="100" height="100">
 
 Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
 
