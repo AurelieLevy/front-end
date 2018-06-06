@@ -8,22 +8,21 @@ Une carte représente les emplacements des différents groupes de capteurs. Un c
 ## Technologies utilisées
 * [React](https://reactjs.org/) 
 
-
-<img src="images/ReactJS.png" alt="Logo reac" width="100" height="100">
+<img src="images/ReactJS.png" alt="Logo react" width="100" height="100">
 
 Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
 
 
 * [D3](https://d3js.org/) 
 
-![d3](images/d3.png "Logo d3")
+<center><img src="images/d3.png" alt="Logo d3" width="100" height="100"> </center>
 
 Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
 
 
 * [Mapbox.js](https://www.mapbox.com/mapbox.js/api/) 
 
-![mapbox](images/mapbox.png "Logo mapbox")
+<img src="images/mapbox.png" alt="Logo mapbox" width="200">
 
 Il s'agit d'une bibliothèque JavaScript — basée sur [Leaflet](https://leafletjs.com/) qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
 
