@@ -78,7 +78,10 @@ Chaque page des capteurs (atteignable par un clic sur un repère de la carte) pr
 
 [Instruction de déploiement/utilisation]
 
-* Le projet s'exécute au travers d'une image docker. Il faut simplement faire une `docker-compose up`
+Le projet s'exécute au travers d'une image docker.
+
+* build avec `docker build -t front-end .`
+* run avec `docker run -p 80:80 -d front-end`
 
 ### en mode développement
 
@@ -94,19 +97,9 @@ webpack build => `yarn run build`
 
 `server` => fichiers du server
 
-`utils` => script de fetch de l'api vers csv ou populate de la db
-
 `build` => config webpack
 
 `app` => frontend buildé
-
-`screenshots` => screenshots des étapes de dev
-
-## Utilisation
-
-Pour l'accès au frontend => [http://0.0.0.0:3000/episodes](http://0.0.0.0:3000/episodes)
-
-Pour l'accès à api => `http://0.0.0.0:3000/api/episodes`
 
 ## Problèmes rencontrés et difficultés à prendre en compte
 
