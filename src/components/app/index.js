@@ -7,24 +7,33 @@ import ScrollToTop from "src/components/utils/ScrollToTop"
 
 import Map from "./Map"
 import Node from "./Node"
+import Login from "./Login"
 
 import "./style.scss"
 
 const { Header, Content, Footer } = Layout
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={props => (localStorage.token ? <Component {...props} /> : <Redirect to="/login" />)}
+    />
+)
 
 const App = () => (
     <BrowserRouter>
         <ScrollToTop>
             <LocaleProvider locale={frFR}>
                 <Layout>
-                    <Header style={{ position: "fixed", width: "100%" }}>
+                    <Header style={{ position: "fixed", width: "100%", zIndex: 1000 }}>
                         <div className="logo" />
                     </Header>
                     <Content styleName="content-wrapper">
                         <Switch>
-                            <Route exact path="/" component={Map} />
-                            <Route path="/node/:id" component={Node} />
-                            <Route path="*" render={() => <Redirect to="/" />} />
+                            <Route exact path="/login" component={Login} />
+                            <PrivateRoute exact path="/map" component={Map} />
+                            <PrivateRoute path="/node/:id" component={Node} />
+                            <Route path="*" render={() => <Redirect to="/login" />} />
                         </Switch>
                     </Content>
                     <Footer style={{ textAlign: "center" }}>

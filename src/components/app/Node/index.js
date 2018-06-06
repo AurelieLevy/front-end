@@ -29,48 +29,88 @@ module.exports = class Tasks extends React.Component {
     }
 
     render() {
-        const topColResponsiveProps = {
+        const actualSensorResponsiveProps = {
             xs: 24,
             sm: 12,
-            md: 12,
-            lg: 12,
-            xl: 6,
+            md: 6,
+            lg: 4,
+            xl: 4,
+            style: { marginBottom: 24 }
+        }
+        const historySensorResponsiveProps = {
+            span: 24,
             style: { marginBottom: 24 }
         }
         return (
             <Fragment>
-                <Row gutter={24}>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Temperature ambiante">
-                            Whatever content
-                        </Card>
-                    </Col>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Pression">
-                            Whatever content
-                        </Card>
-                    </Col>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Humidité">
-                            Whatever content
-                        </Card>
-                    </Col>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Resitance de l'air">
-                            Whatever content
-                        </Card>
-                    </Col>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Temperature du noeud">
-                            Whatever content
-                        </Card>
-                    </Col>
-                    <Col {...topColResponsiveProps}>
-                        <Card loading={this.state.loading} title="Voltage">
-                            Whatever content
-                        </Card>
-                    </Col>
-                </Row>
+                <div styleName={"sensor-wrapper"}>
+                    <div styleName={"title"}>Dernières valeurs</div>
+                    <Row gutter={24}>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Temperature ambiante">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Pression">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Humidité">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Resitance de l'air">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Temperature du noeud">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...actualSensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Voltage">
+                                Whatever content
+                            </Card>
+                        </Col>
+                    </Row>
+                </div>
+                <div styleName={"sensor-wrapper"}>
+                    <div styleName={"title"}>Historique</div>
+                    <Row gutter={24}>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Temperature ambiante" />
+                        </Col>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Pression">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Humidité">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Resitance de l'air">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Temperature du noeud">
+                                Whatever content
+                            </Card>
+                        </Col>
+                        <Col {...historySensorResponsiveProps}>
+                            <Card loading={this.state.loading} title="Voltage">
+                                Whatever content
+                            </Card>
+                        </Col>
+                    </Row>
+                </div>
             </Fragment>
         )
     }

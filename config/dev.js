@@ -1,7 +1,7 @@
 module.exports = {
-	env: "dev",
+    env: "dev",
 
-	endpoints: {
-		api: "http://0.0.0.0:3000/api/"
-	}
+    endpoints: {
+        api: "http://iot_lora.lan.iict.ch:4000/"
+    }
 }
