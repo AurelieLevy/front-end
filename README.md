@@ -6,9 +6,21 @@ Ce repository est consacré à la partie front-end. Elle consiste en la mise en 
 Une carte représente les emplacements des différents groupes de capteurs. Un clic suffit à l'ouverture des informations liées au groupe choisi.
 
 ## Technologies utilisées
-* [React](https://reactjs.org/) : est une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
-* [D3](https://d3js.org/) : est une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
-* [Mapbox.js](https://www.mapbox.com/mapbox.js/api/) : est une bibliothèque JavaScript — basée sur [Leaflet](https://leafletjs.com/) qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
+* [React](https://reactjs.org/) 
+
+![React logo]<center><img src="images/ReactJS.png" alt="react logo" style="width:200px;"/> </center>
+
+Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
+* [D3](https://d3js.org/) 
+
+![React logo]<center><img src="images/d3.png" alt="d3 logo" style="width:200px;"/> </center>
+
+Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
+* [Mapbox.js](https://www.mapbox.com/mapbox.js/api/) 
+
+![React logo]<center><img src="images/mapbox.png" alt="mapbox logo" style="width:200px;"/> </center>
+
+Il s'agit d'une bibliothèque JavaScript — basée sur [Leaflet](https://leafletjs.com/) qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
 
 Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organiser l'application en modules
 
@@ -36,17 +48,33 @@ De cette manière, il est possible d'observer séparément les capteurs selon le
 Pour plus d'informations sur les endpoints, veuillez vous référer à la partie backend.
 
 ### Visuel
-[Captures d'écran et explications]
+<span style="color:red">[Captures d'écran et explications]</span>
+Le visuel de l'application met à disposition trois pages principales, dont voici la description.
+#### Login
+La page de login présente un formulaire de connexion. Deux types d'utilisateurs existent : administrateur et lambda. Pour créer un nouvel utilisateur, il faut le faire directement depuis la base de données.
+Le passage par la page de login est obligatoire. L'application n'est pas utilisable tant que l'utilisateur n'est pas connecté.
+#### Carte
+Une page présente une carte avec des points représentant les groupes de capteurs. Ces points sont sur l'emplacement réel des capteurs. Chacun de ces repères est clickable. Cette action redirige l'utilisateur sur la page des capteurs du groupe lié au noeud choisi.
+#### Capteurs
+Chaque page des capteurs (atteignable par un clic sur un repère de la carte) présente plusieurs informations. La première partie (en haut de la page) présente les dernière valeurs relevées pour les capteurs. La partie du bas, quant à elle, présente les différents graphiques par type de données. Ces graphiques permettent d'observer les changements de valeurs sur une durée relativement longue.
 
 ## Déploiement
 [Instruction de déploiement/utilisation]
 
 ## Problèmes rencontrés et difficultés à prendre en compte
+- Un des problèmes principaux rencontré a été le manque de temps. En effet, le temps alloué à ce projet était relativement faible, ce qui fait que le visuel est simpliste.
+- 
 
 ## Conclusion
 ### Points à améliorer
 Comme nous n'avons pas eu beaucoup de temps, le visuel est totalement améliorable.
 Nous sommes restés relativement basiques, et nous avons fait le minimum de pages possibles. Une des améliorations possibles à ce sujet serait de mieux diviser les résultats, afin de les rendre plus lisibles.
+
+D'autres améliorations peuvent aussi être faites:
+- Possibilité de s'inscrire à l'application
+- Représentation plus précise de la carte: par exemple, permettre l'utilisation de cartes personnalisées (bâtiments au lieu du monde)
+- En hover sur les points, afficher les informations importantes (par exemple, les dernières valeurs des capteurs)
+- Tout ce qui est configuration de visuel: choix de la date des données affichées (par exemple, du 20.02.2018 au 25.02.2018), etc.
 ### Points en suspens
 ### Améliorations futures
 
