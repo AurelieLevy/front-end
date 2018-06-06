@@ -3,7 +3,7 @@ Dans le cadre du cours IOT à la HEIG-VD, Suisse.
 
 ## Introduction
 Ce repository est consacré à la partie front-end. Elle consiste en la mise en place d'une interface utilisateur permettant de voir les différentes valeurs fournies par les capteurs. Les données ont été traitées de manière à présenter des informations compréhensibles et utilisables. Divers graphiques représentent donc les résultats afin de les présenter visuellement.
-Une carte représente les emplacements des différents groupes de capteurs. Un clic suffit à l'ouverture des informations liées au groupe choisi.
+Une carte représente les emplacements des différents groupes de capteurs (température, humidité, particules fines,...). Un clic suffit à l'ouverture des informations liées au groupe choisi.
 
 ## Technologies utilisées
 * [React](https://reactjs.org/) 
@@ -41,7 +41,7 @@ L'utilisateur lambda a accès aux pages permettant de visionner les données et 
 
 ### Pages
 Plusieurs pages sont disponibles, chacune correspondantes à une fonctionnalité.
-Une page permet de voir une carte ou se trouve des points, lesquels représentent la position de chaque groupe de capteurs. Au clic sur un de ces points, il est possible d'atteindre une page présentant les données liées aux capteurs visés.
+Une page permet de voir une carte où se trouve des points, lesquels représentent la position de chaque groupe de capteurs. Au clic de l'un de ces points, il est possible d'atteindre une page présentant les données liées aux capteurs visés.
 De cette manière, il est possible d'observer séparément les capteurs selon leur emplacements.
 
 ### Endpoints
@@ -51,7 +51,7 @@ Pour plus d'informations sur les endpoints, veuillez vous référer à la partie
 <span style="color:red">[Captures d'écran et explications]</span>
 Le visuel de l'application met à disposition trois pages principales, dont voici la description.
 #### Login
-La page de login présente un formulaire de connexion. Deux types d'utilisateurs existent : administrateur et lambda. Pour créer un nouvel utilisateur, il faut le faire directement depuis la base de données.
+La page de login présente un formulaire de connexion. Deux types d'utilisateurs existent : ***admin*** et ***lambda***. Pour créer un nouvel utilisateur, il faut le faire directement depuis la base de données.
 Le passage par la page de login est obligatoire. L'application n'est pas utilisable tant que l'utilisateur n'est pas connecté.
 #### Carte
 Une page présente une carte avec des points représentant les groupes de capteurs. Ces points sont sur l'emplacement réel des capteurs. Chacun de ces repères est clickable. Cette action redirige l'utilisateur sur la page des capteurs du groupe lié au noeud choisi.
@@ -60,6 +60,21 @@ Chaque page des capteurs (atteignable par un clic sur un repère de la carte) pr
 
 ## Déploiement
 [Instruction de déploiement/utilisation]
+- Le projet s'exécute au travers d'une image docker. Il faut simplement faire une `docker-compose up`
+
+### en mode développement
+
+Vous pouvez l'exécutez avec les commandes suivantes : 
+
+webpack dev => `yarn run webpack`
+
+webpack build => `yarn run build`
+
+## Utilisation
+
+Pour l'accès au frontend => [http://0.0.0.0:3000/episodes](http://0.0.0.0:3000/episodes)
+
+Pour l'accès à api => `http://0.0.0.0:3000/api/episodes`
 
 ## Problèmes rencontrés et difficultés à prendre en compte
 - Un des problèmes principaux rencontré a été le manque de temps. En effet, le temps alloué à ce projet était relativement faible, ce qui fait que le visuel est simpliste.
