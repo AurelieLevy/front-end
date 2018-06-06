@@ -8,7 +8,8 @@ Une carte représente les emplacements des différents groupes de capteurs. Un c
 ## Technologies utilisées
 * [React](https://reactjs.org/) 
 
-![React](images/ReactJS.png "Logo react")
+
+<img src="images/ReactJS.png" alt="Logo reac" width="100" height="100">
 
 Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
 
@@ -87,10 +88,3 @@ D'autres améliorations peuvent aussi être faites:
 * React: <https://reactjs.org/>
 * D3: <https://d3js.org/>
 * Mapbox: <https://www.mapbox.com/mapbox.js/api/>
-
-
-<style>
-img[alt=d3]{width: 100px; text-align: center;}
-img[alt=mapbox]{width: 100px; text-align: center;}
-img[alt=React]{width: 100px; text-align: center;}
-</style>
