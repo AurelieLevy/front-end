@@ -11,7 +11,8 @@ import Login from "./Login"
 
 import "./style.scss"
 
-const { Header, Content, Footer } = Layout
+import Header from "./Header"
+const { Content, Footer } = Layout
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
