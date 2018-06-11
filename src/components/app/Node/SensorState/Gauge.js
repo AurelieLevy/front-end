@@ -41,7 +41,6 @@ Shape.registerShape("point", "pointer", {
 class Gauge extends React.Component {
     render() {
         const {
-            title,
             height,
             percent,
             forceFit = true,
@@ -58,7 +57,7 @@ class Gauge extends React.Component {
                 nice: true
             }
         }
-        const data = [{ value: percent / 10 }]
+        const data = [{ value: (percent / 10).toPrecision(2) }]
         return (
             <Chart
                 height={height}
@@ -93,6 +92,11 @@ class Gauge extends React.Component {
                 />
                 <Guide>
                     <Line
+                        start={[1, 0.905]}
+                        end={[1, 0.85]}
+                        lineStyle={{ stroke: color, lineDash: null, lineWidth: 3 }}
+                    />
+                    <Line
                         start={[3, 0.905]}
                         end={[3, 0.85]}
                         lineStyle={{ stroke: color, lineDash: null, lineWidth: 3 }}
@@ -105,6 +109,11 @@ class Gauge extends React.Component {
                     <Line
                         start={[7, 0.905]}
                         end={[7, 0.85]}
+                        lineStyle={{ stroke: color, lineDash: null, lineWidth: 3 }}
+                    />
+                    <Line
+                        start={[9, 0.905]}
+                        end={[9, 0.85]}
                         lineStyle={{ stroke: color, lineDash: null, lineWidth: 3 }}
                     />
                     <Arc
@@ -125,7 +134,7 @@ class Gauge extends React.Component {
                             return `
                 <div style="width: 300px;text-align: center;font-size: 12px!important;">
                   <p style="font-size: 24px;color: rgba(0,0,0,0.85);margin: 0;">
-                    ${data[0].value * 10}%
+                    ${(data[0].value * 10).toPrecision(2)}%
                   </p>
                 </div>`
                         }}

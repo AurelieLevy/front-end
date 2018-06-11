@@ -1,50 +1,13 @@
 import React, { Fragment } from "react"
-import { Row, Col, Card } from "antd"
+import { Row, Col } from "antd"
 import request from "src/resources/request"
 
 import SensorHistory from "./SensorHistory"
 import SensorState from "./SensorState"
 
-import "./style.scss"
+import moment from "moment"
 
-const DATA = [
-    {
-        year: "1991",
-        value: 3
-    },
-    {
-        year: "1992",
-        value: 4
-    },
-    {
-        year: "1993",
-        value: 3.5
-    },
-    {
-        year: "1994",
-        value: 5
-    },
-    {
-        year: "1995",
-        value: 4.9
-    },
-    {
-        year: "1996",
-        value: 6
-    },
-    {
-        year: "1997",
-        value: 7
-    },
-    {
-        year: "1998",
-        value: 9
-    },
-    {
-        year: "1999",
-        value: 13
-    }
-]
+import "./style.scss"
 
 const actualSensorResponsiveProps = {
     xs: 24,
@@ -61,38 +24,47 @@ const historySensorResponsiveProps = {
 
 module.exports = class Node extends React.Component {
     state = {
-        data: DATA,
-        sensors: [{ id: "123", data: DATA, title: "test" }],
-        loading: false,
-        loadingMore: false,
-        showLoadingMore: true
+        data: new Array(5).map((v, i) => ({ type: i, data: [] })),
+        loading: true
     }
 
-    //componentDidMount = () => this.fetchData()
+    componentDidMount = () => this.fetchData()
 
     fetchData = () => {
-        this.setState({
-            loadingMore: true
-        })
-        request.get(`node/${this.props.match.params.id}`, {}, res => {
-            console.log(res)
-            // const data = this.state.data.concat(DEFAULT_DATA)
+        this.setState({ loading: true })
+        request.get(`nodes/${this.props.match.params.id}`, {}, res => {
+            console.log(this.parseData(res.data))
             this.setState({
-                data: res.data,
-                loadingMore: false
+                data: this.parseData(res.data),
+                loading: false
             })
         })
     }
 
-    renderSensorsHistory = ({ id, title, data }) => (
-        <Col key={id} {...historySensorResponsiveProps}>
-            <SensorHistory title={title} data={data} loading={this.state.loading} />
+    parseData = data => {
+        const types = data.reduce(
+            (acc, d) => (acc.indexOf(d.type) < 0 ? acc.concat([d.type]) : acc),
+            []
+        )
+
+        return types.map(type => ({
+            type,
+            data: data
+                .filter(d => d.type === type)
+                .map(({ value, date }) => ({ value, date }))
+                .sort((a, b) => moment.utc(b.date).diff(moment.utc(a.date)))
+        }))
+    }
+
+    renderSensorsHistory = ({ type, data }) => (
+        <Col key={type + "_history"} {...historySensorResponsiveProps}>
+            <SensorHistory title={type} data={data} loading={this.state.loading} />
         </Col>
     )
 
-    renderSensorState = ({ id, title }) => (
-        <Col key={id} {...actualSensorResponsiveProps}>
-            <SensorState title={title} />
+    renderSensorState = ({ type, data }) => (
+        <Col key={type} {...actualSensorResponsiveProps}>
+            <SensorState title={type} value={data ? data[0].value : NaN} />
         </Col>
     )
 
@@ -101,38 +73,11 @@ module.exports = class Node extends React.Component {
             <Fragment>
                 <div styleName={"sensor-wrapper"}>
                     <div styleName={"title"}>Dernières valeurs</div>
-                    <Row gutter={24}>
-                        {this.state.sensors.map(this.renderSensorState)}
-                        <Col {...actualSensorResponsiveProps}>
-                            <Card loading={this.state.loading} title="Pression">
-                                Whatever content
-                            </Card>
-                        </Col>
-                        <Col {...actualSensorResponsiveProps}>
-                            <Card loading={this.state.loading} title="Humidité">
-                                Whatever content
-                            </Card>
-                        </Col>
-                        <Col {...actualSensorResponsiveProps}>
-                            <Card loading={this.state.loading} title="Resitance de l'air">
-                                Whatever content
-                            </Card>
-                        </Col>
-                        <Col {...actualSensorResponsiveProps}>
-                            <Card loading={this.state.loading} title="Temperature du noeud">
-                                Whatever content
-                            </Card>
-                        </Col>
-                        <Col {...actualSensorResponsiveProps}>
-                            <Card loading={this.state.loading} title="Voltage">
-                                Whatever content
-                            </Card>
-                        </Col>
-                    </Row>
+                    <Row gutter={24}>{this.state.data.map(this.renderSensorState)}</Row>
                 </div>
                 <div styleName={"sensor-wrapper"}>
                     <div styleName={"title"}>Historique</div>
-                    <Row gutter={24}>{this.state.sensors.map(this.renderSensorsHistory)}</Row>
+                    <Row gutter={24}>{this.state.data.map(this.renderSensorsHistory)}</Row>
                 </div>
             </Fragment>
         )

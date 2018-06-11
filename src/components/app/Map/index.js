@@ -26,33 +26,37 @@ module.exports = class Tasks extends React.Component {
         data: [],
         loading: false,
         loadingMore: false,
-        showLoadingMore: true,
         latitude: 46.778845,
         longitude: 6.659125,
         zoom: 17
     }
 
-    //componentDidMount = () => this.fetchData()
+    componentDidMount = () => this.fetchData()
 
     fetchData = () => {
         this.setState({
-            loadingMore: true
+            loading: true
         })
-        request.get("nodes", {}, res => {
-            console.log(res)
-            // const data = this.state.data.concat(DEFAULT_DATA)
-            this.setState(
-                {
-                    data: res.data,
-                    loadingMore: false
-                },
-                () => window.dispatchEvent(new Event("resize"))
-            )
+        request.get("nodes", {}, data => {
+            console.log(data)
+            this.setState({ data: data, loading: false })
         })
     }
 
+    renderNode = ({ latitude, longitude, id }) => (
+        <Marker
+            key={id}
+            coordinates={[longitude, latitude]}
+            onClick={() => {
+                this.props.history.push("/node/" + id)
+            }}
+        >
+            <Mark />
+        </Marker>
+    )
+
     render() {
-        const { latitude, longitude, zoom } = this.state
+        const { latitude, longitude, zoom, data } = this.state
         return (
             <Map
                 style="mapbox://styles/mapbox/streets-v9"
@@ -60,14 +64,7 @@ module.exports = class Tasks extends React.Component {
                 center={[longitude, latitude]}
                 zoom={[zoom]}
             >
-                <Marker
-                    coordinates={[longitude, latitude]}
-                    onClick={() => {
-                        this.props.history.push("/node/1")
-                    }}
-                >
-                    <Mark />
-                </Marker>
+                {data.map(this.renderNode)}
             </Map>
         )
     }

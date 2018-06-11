@@ -113,8 +113,8 @@ const Gauge = createG2(chart => {
     chart.render()
 })*/
 
-module.exports = props => (
-    <Card loading={props.loading} title={props.title}>
-        <Gauge title={props.title} height={200} percent={10} />
+module.exports = ({ loading, title, value }) => (
+    <Card loading={loading} title={title} style={{ textTransform: "capitalize" }}>
+        <Gauge title={title} height={200} percent={value} />
     </Card>
 )

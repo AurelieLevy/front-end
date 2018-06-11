@@ -19,8 +19,7 @@ class NormalLoginForm extends React.Component {
             if (!err) {
                 this.setState({ loading: true })
                 const { username, password } = values
-                request.post("auth", { username, password }, res => {
-                    console.log(res)
+                request.post("auth", { username, password }, {}, res => {
                     if (res.token) {
                         localStorage.setItem("token", res.token)
                         this.props.history.push("/map")

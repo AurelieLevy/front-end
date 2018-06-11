@@ -22,8 +22,8 @@ import Chart from "./Chart"
             configs={{ forceFit: true, container: "mountNode", padding: 0 }}
         />*/
 
-module.exports = props => (
-    <Card loading={props.loading} title={props.title}>
-        <Chart data={props.data} />
+module.exports = ({ loading, title, data }) => (
+    <Card loading={loading} title={title} style={{ textTransform: "capitalize" }}>
+        <Chart data={data} />
     </Card>
 )

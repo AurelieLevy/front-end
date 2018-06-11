@@ -8971,7 +8971,20 @@ a {
   background: #5d00d8;
   position: fixed;
   width: 100%;
-  z-index: 100; }
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center; }
   .header__38xq7CB .header-content__2Q8SK0y {
     display: -webkit-box;
     display: -webkit-flex;
