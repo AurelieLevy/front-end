@@ -82,8 +82,14 @@ Chaque page des capteurs (atteignable par un clic sur un repère de la carte) pr
 
 <p align="center"> 
 <img src="images/gauges.png" alt="Captor page - gauges" width="400">
+</p>
+<p align="center"> 
 <img src="images/battery_temperature.png" alt="Captor page - battery & temperature" width="400">
+</p>
+<p align="center"> 
 <img src="images/gas.png" alt="Captor page - gas & Die" width="400">
+</p>
+<p align="center"> 
 <img src="images/light_humidity_pressure.png" alt="Captor page - light, humidity & pressure" width="400">
 </p>
 
