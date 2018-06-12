@@ -7,6 +7,8 @@ Dans le cadre du cours IOT à la HEIG-VD, Suisse.
 Ce bout de projet est consacré à la partie front-end. Il consiste en la mise en place d'une interface utilisateur permettant de voir les différentes valeurs fournies par les capteurs. Les données ont été traitées de manière à présenter des informations compréhensibles et utilisables. Divers graphiques représentent donc les résultats afin de les présenter visuellement.
 Une carte représente les emplacements des différents groupes de capteurs (température, humidité, particules fines,...). Un clic suffit à l'ouverture des informations liées au groupe choisi.
 
+Vous pouvez atteindre l'application sur ce lien: [IOT - project link](http://iot_lora.lan.iict.ch/)
+
 ## Technologies utilisées
 
 * [React](https://reactjs.org/)
