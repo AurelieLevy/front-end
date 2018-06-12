@@ -54,11 +54,10 @@ De cette manière, il est possible d'observer séparément les capteurs selon le
 
 ### Endpoints
 
-Pour plus d'informations sur les endpoints, veuillez vous référer à la partie backend.
+Pour plus d'informations sur les endpoints, veuillez vous référer aux documents de la partie backend.
 
 ### Visuel
 
-<span style="color:red">[Captures d'écran et explications]</span>
 Le visuel de l'application met à disposition trois pages principales, dont voici la description.
 
 #### Login
@@ -71,16 +70,24 @@ Le passage par la page de login est obligatoire. L'application n'est pas utilisa
 
 #### Carte
 
-Une page présente une carte avec des points représentant les groupes de capteurs. Ces points sont sur l'emplacement réel des capteurs. Chacun de ces repères est clickable. Cette action redirige l'utilisateur sur la page des capteurs du groupe lié au noeud choisi.
+Une page présente une carte avec des points représentant les groupes de capteurs. Ces points sont sur l'emplacement réel des capteurs. Chacun de ces repères est cliquable. Cette action redirige l'utilisateur sur la page des capteurs du groupe lié au noeud choisi.
+
+<p align="center"> 
+<img src="images/map.png" alt="Map page" width="400">
+</p>
 
 #### Capteurs
 
 Chaque page des capteurs (atteignable par un clic sur un repère de la carte) présente plusieurs informations. La première partie (en haut de la page) présente les dernière valeurs relevées pour les capteurs. La partie du bas, quant à elle, présente les différents graphiques par type de données. Ces graphiques permettent d'observer les changements de valeurs sur une durée relativement longue.
 
+<p align="center"> 
+<img src="images/gauges.png" alt="Captor page - gauges" width="400">
+<img src="images/battery_temperature.png" alt="Captor page - battery & temperature" width="400">
+<img src="images/gas.png" alt="Captor page - gas & Die" width="400">
+<img src="images/light_humidity_pressure.png" alt="Captor page - light, humidity & pressure" width="400">
+</p>
+
 ## Déploiement
-
-[Instruction de déploiement/utilisation]
-
 Le projet s'exécute au travers d'une image docker.
 
 * build avec `docker build -t front-end .`
@@ -107,7 +114,6 @@ webpack build => `yarn run build`
 ## Problèmes rencontrés et difficultés à prendre en compte
 
 * Un des problèmes principaux rencontré a été le manque de temps. En effet, le temps alloué à ce projet était relativement faible, ce qui fait que le visuel est simpliste.
-*
 
 ## Conclusion
 
@@ -122,8 +128,10 @@ D'autres améliorations peuvent aussi être faites:
 * Représentation plus précise de la carte: par exemple, permettre l'utilisation de cartes personnalisées (bâtiments au lieu du monde)
 * En hover sur les points, afficher les informations importantes (par exemple, les dernières valeurs des capteurs)
 * Tout ce qui est configuration de visuel: choix de la date des données affichées (par exemple, du 20.02.2018 au 25.02.2018), etc.
-    ### Points en suspens
-    ### Améliorations futures
+
+### Points en suspens
+
+### Améliorations futures
 
 ## Documentation supplémentaire
 
