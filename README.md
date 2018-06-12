@@ -137,10 +137,6 @@ D'autres améliorations peuvent aussi être faites:
 * En passant la souris sur les points, afficher les informations importantes (par exemple, les dernières valeurs des capteurs)
 * Tout ce qui est configuration de visuel: choix de la date des données affichées (par exemple, du 20.02.2018 au 25.02.2018), etc.
 
-### Points en suspens
-
-### Améliorations futures
-
 ## Documentation supplémentaire
 
 ### Liens utiles
