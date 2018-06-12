@@ -4,7 +4,7 @@ Dans le cadre du cours IOT à la HEIG-VD, Suisse.
 
 ## Introduction
 
-Ce repository est consacré à la partie front-end. Elle consiste en la mise en place d'une interface utilisateur permettant de voir les différentes valeurs fournies par les capteurs. Les données ont été traitées de manière à présenter des informations compréhensibles et utilisables. Divers graphiques représentent donc les résultats afin de les présenter visuellement.
+Ce bout de projet est consacré à la partie front-end. Il consiste en la mise en place d'une interface utilisateur permettant de voir les différentes valeurs fournies par les capteurs. Les données ont été traitées de manière à présenter des informations compréhensibles et utilisables. Divers graphiques représentent donc les résultats afin de les présenter visuellement.
 Une carte représente les emplacements des différents groupes de capteurs (température, humidité, particules fines,...). Un clic suffit à l'ouverture des informations liées au groupe choisi.
 
 ## Technologies utilisées
@@ -13,13 +13,13 @@ Une carte représente les emplacements des différents groupes de capteurs (temp
 <p align="center"> 
 <img src="images/ReactJS.png" alt="Logo react" width="100" height="100">
 </p>
-Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
+Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps, permettant ainsi une gestion dynamique de leur affichage.
 
 * [D3](https://d3js.org/)
 <p align="center"> 
 <img src="images/d3.png" alt="Logo d3" width="100" height="100">
  </p>
-Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
+Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
 
 * [Mapbox.js](https://www.mapbox.com/mapbox.js/api/)
 <p align="center"> 
@@ -36,6 +36,7 @@ Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organise
 Le front-end doit mettre à disposition différentes fonctionnalités selon le rôle de l'utilisateur connecté.
 Deux types d'utilisateurs existent: admin et lambda.
 Dès que quelqu'un souhaite avoir accès à l'application, il doit se connecter avec son mot de passe.
+Pour obtenir les accès de connexion, veuillez vous référer à la documentation du backend.
 
 **_admin_**
 
@@ -49,7 +50,7 @@ L'utilisateur lambda a accès aux pages permettant de visionner les données et 
 ### Pages
 
 Plusieurs pages sont disponibles, chacune correspondantes à une fonctionnalité.
-Une page permet de voir une carte où se trouve des points, lesquels représentent la position de chaque groupe de capteurs. Au clic de l'un de ces points, il est possible d'atteindre une page présentant les données liées aux capteurs visés.
+La première page accessible est la page de login. Une fois ceci fait, une deuxième page permet de voir une carte où se trouve des points, lesquels représentent la position de chaque groupe de capteurs. Au clic de l'un de ces points, il est possible d'atteindre une troisième page présentant les données liées aux capteurs visés.
 De cette manière, il est possible d'observer séparément les capteurs selon leur emplacements.
 
 ### Endpoints
@@ -78,28 +79,26 @@ Une page présente une carte avec des points représentant les groupes de capteu
 
 #### Capteurs
 
-Chaque page des capteurs (atteignable par un clic sur un repère de la carte) présente plusieurs informations. La première partie (en haut de la page) présente les dernière valeurs relevées pour les capteurs. La partie du bas, quant à elle, présente les différents graphiques par type de données. Ces graphiques permettent d'observer les changements de valeurs sur une durée relativement longue.
+Chaque page des capteurs (atteignable par un clic sur un repère de la carte) présente plusieurs informations. La première partie (en haut de la page) présente les dernière valeurs relevées pour les capteurs, sous forme de jauges. La partie du bas, quant à elle, présente les différents graphiques par type de données. Ces graphiques permettent d'observer les changements de valeurs sur une durée relativement longue.
 
+Voici un exemple concernant les jauges susmentionnées:
 <p align="center"> 
 <img src="images/gauges.png" alt="Captor page - gauges" width="400">
 </p>
+Et voici un exemple concernant les graphiques "normaux":
 <p align="center"> 
 <img src="images/battery_temperature.png" alt="Captor page - battery & temperature" width="400">
 </p>
-<p align="center"> 
-<img src="images/gas.png" alt="Captor page - gas & Die" width="400">
-</p>
-<p align="center"> 
-<img src="images/light_humidity_pressure.png" alt="Captor page - light, humidity & pressure" width="400">
-</p>
+
+Concernant ces derniers graphiques, les données affichées concernent les mêmes données que pour les jauges. Cependant, la durée sur laquelle s'étendent les données sont bien plus longues.
 
 ## Déploiement
-Le projet s'exécute au travers d'une image docker.
+Le projet s'exécute au travers d'une image docker que nous vous fournissons.
 
 * build avec `docker build -t front-end .`
 * run avec `docker run -p 80:80 -d front-end`
 
-### en mode développement
+### En mode développement
 
 Vous pouvez l'exécutez avec les commandes suivantes :
 
@@ -108,6 +107,8 @@ webpack dev => `yarn run webpack`
 webpack build => `yarn run build`
 
 ## Architecture
+
+Les dossiers les plus importants sont:
 
 `src` => fichiers sources du frontend
 
