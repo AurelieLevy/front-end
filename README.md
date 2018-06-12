@@ -25,7 +25,8 @@ Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de don
 <p align="center"> 
 <img src="images/mapbox.png" alt="Logo mapbox" width="200">
 </p>
-Il s'agit d'une bibliothèque JavaScript — basée sur [Leaflet](https://leafletjs.com/) qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
+Il s'agit d'une bibliothèque JavaScript, basée sur [Leaflet](https://leafletjs.com/), qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
+
 
 Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organiser l'application en modules
 
@@ -126,14 +127,14 @@ Les dossiers les plus importants sont:
 
 ### Points à améliorer
 
-Comme nous n'avons pas eu beaucoup de temps, le visuel est totalement améliorable.
-Nous sommes restés relativement basiques, et nous avons fait le minimum de pages possibles. Une des améliorations possibles à ce sujet serait de mieux diviser les résultats, afin de les rendre plus lisibles.
+Comme nous n'avons pas eu beaucoup de temps, le visuel est améliorable.
+Nous sommes restés relativement basiques, et nous avons fait le minimum de pages possibles. Une des améliorations possibles à ce sujet est de mieux diviser les résultats, afin de les rendre plus lisibles.
 
 D'autres améliorations peuvent aussi être faites:
 
 * Possibilité de s'inscrire à l'application
 * Représentation plus précise de la carte: par exemple, permettre l'utilisation de cartes personnalisées (bâtiments au lieu du monde)
-* En hover sur les points, afficher les informations importantes (par exemple, les dernières valeurs des capteurs)
+* En passant la souris sur les points, afficher les informations importantes (par exemple, les dernières valeurs des capteurs)
 * Tout ce qui est configuration de visuel: choix de la date des données affichées (par exemple, du 20.02.2018 au 25.02.2018), etc.
 
 ### Points en suspens
