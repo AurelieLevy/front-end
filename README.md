@@ -10,21 +10,21 @@ Une carte représente les emplacements des différents groupes de capteurs (temp
 ## Technologies utilisées
 
 * [React](https://reactjs.org/)
-<center>
+<p align="center"> 
 <img src="images/ReactJS.png" alt="Logo react" width="100" height="100">
-</center>
+</p>
 Il s'agit d'une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état. Nous avons décidé d'utiliser cette technologie car Matthias la connait très bien. De cette manière, nous avons pu gagner énormément de temps, car React permet de créer des composants de manière rapide et propre. Lesdit composants utilisent des données entrantes qui peuvent changer au cours du temps.
 
 * [D3](https://d3js.org/)
-<center>
+<p align="center"> 
 <img src="images/d3.png" alt="Logo d3" width="100" height="100">
-</center>
+ </p>
 Il s'agit d'une bibliothèque graphique JavaScript qui permet l'affichage de données numériques sous une forme graphique et dynamique. Nous avions déjà appris à l'utiliser en cours, ce qui nous avait permis de constater son utilité. Cette bibliothèque permet en effet de créer des graphiques recherchés et facilement lisible visuellement, de manière à représenter les données sous une forme propre et utilisable. Comme de nombreux codes de graphique sont déjà mis à disposition en libre utilisation, il est facile de créer un graphique et de le modifier afin d'obtenir ce qui est nécessaire à la partie frontend.
 
 * [Mapbox.js](https://www.mapbox.com/mapbox.js/api/)
-<center>
+<p align="center"> 
 <img src="images/mapbox.png" alt="Logo mapbox" width="200">
-</center>
+</p>
 Il s'agit d'une bibliothèque JavaScript — basée sur [Leaflet](https://leafletjs.com/) qui permet l'affichage de cartes interactives et dynamiques. Cette librairie est relativement bien documentée et permet de créer une carte avec différentes caractéristiques, permettant par exemple de limiter le terrain visible ou encore le zoom arrière-avant disponible.
 
 Le projet est build avec [webpack](https://webpack.js.org/) qui aide à organiser l'application en modules
@@ -65,9 +65,10 @@ Le visuel de l'application met à disposition trois pages principales, dont voic
 
 La page de login présente un formulaire de connexion. Deux types d'utilisateurs existent : **_admin_** et **_lambda_**. Pour créer un nouvel utilisateur, il faut le faire directement depuis la base de données.
 Le passage par la page de login est obligatoire. L'application n'est pas utilisable tant que l'utilisateur n'est pas connecté.
-<center>
+<p align="center"> 
 <img src="images/Login.PNG" alt="Login page" width="400">
-</center>
+</p>
+
 #### Carte
 
 Une page présente une carte avec des points représentant les groupes de capteurs. Ces points sont sur l'emplacement réel des capteurs. Chacun de ces repères est clickable. Cette action redirige l'utilisateur sur la page des capteurs du groupe lié au noeud choisi.
